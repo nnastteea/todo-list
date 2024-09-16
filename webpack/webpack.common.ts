@@ -11,6 +11,7 @@ const config: Configuration = {
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
+    alias:{'@assets':path.resolve('./src/assets'),}
   },
   module: {
     rules: [

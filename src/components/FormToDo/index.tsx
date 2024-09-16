@@ -1,12 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import {
-  InputTask,
-  ButtonAddTask,
-  LabelFormAdd,
-  FormAdd,
-  FormGroup,
-} from "./style";
+import * as S from "./style";
 
 function FormToDo() {
   const [name, setName] = useState("");
@@ -16,18 +10,18 @@ function FormToDo() {
   }
 
   return (
-    <FormAdd>
-      <FormGroup>
-        <LabelFormAdd htmlFor="add-task">Add a new task</LabelFormAdd>
-        <InputTask
+    <S.FormAdd>
+      <S.FormGroup>
+        <S.LabelFormAdd htmlFor="add-task">Add a new task</S.LabelFormAdd>
+        <S.InputTask
           type="text"
           id="add-task"
           value={name}
           onChange={handleChange}
         />
-      </FormGroup>
-      <ButtonAddTask type="submit">Add ToDo</ButtonAddTask>
-    </FormAdd>
+      </S.FormGroup>
+      <S.ButtonAddTask type="submit">Add ToDo</S.ButtonAddTask>
+    </S.FormAdd>
   );
 }
 

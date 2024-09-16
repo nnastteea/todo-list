@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { GlobalStyle, MainStyle } from "./GlobalStyles";
+import * as S from "./GlobalStyles";
 import HeaderToDo from "./components/HeaderToDo";
 import FormToDo from "./components/FormToDo";
 import TaskList from "./components/TaskList";
@@ -8,12 +8,12 @@ import TaskList from "./components/TaskList";
 function App() {
   return (
     <>
-      <GlobalStyle />
+      <S.GlobalStyle />
       <HeaderToDo />
-      <MainStyle>
+      <S.MainStyle>
         <FormToDo />
         <TaskList />
-      </MainStyle>
+      </S.MainStyle>
     </>
   );
 }

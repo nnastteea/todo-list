@@ -1,14 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import {
-  HeaderContainer,
-  Title,
-  NavContainer,
-  MenuIcon,
-  DropDownMenu,
-  MenuItem,
-} from "./style";
-import MenuBurger from "../../assets/menu.svg";
+import * as S from "./style";
+import MenuBurger from '@assets/menu.svg';
 
 function HeaderToDo() {
   const [isMobile, setIsMobile] = useState(false);
@@ -27,31 +20,31 @@ function HeaderToDo() {
   }, []);
 
   const openMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen(prevState=>!prevState);
   };
 
   return (
-    <HeaderContainer>
-      <Title>Modsen ToDo List</Title>
+    <S.HeaderContainer>
+      <S.Title>Modsen ToDo List</S.Title>
       {isMobile ? (
         <>
-          <MenuIcon onClick={openMenu}>
+          <S.MenuIcon onClick={openMenu}>
             <img src={MenuBurger} alt="menu" />
-          </MenuIcon>
+          </S.MenuIcon>
           {isMenuOpen && (
-            <DropDownMenu>
-              <MenuItem>Home</MenuItem>
-              <MenuItem>Settings</MenuItem>
-            </DropDownMenu>
+            <S.DropDownMenu>
+              <S.MenuItem>Home</S.MenuItem>
+              <S.MenuItem>Settings</S.MenuItem>
+            </S.DropDownMenu>
           )}
         </>
       ) : (
-        <NavContainer>
-          <MenuItem>Home</MenuItem>
-          <MenuItem>Settings</MenuItem>
-        </NavContainer>
+        <S.NavContainer>
+          <S.MenuItem>Home</S.MenuItem>
+          <S.MenuItem>Settings</S.MenuItem>
+        </S.NavContainer>
       )}
-    </HeaderContainer>
+    </S.HeaderContainer>
   );
 }
 
