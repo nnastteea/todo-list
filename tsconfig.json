@@ -1,17 +1,17 @@
 {
-    "compilerOptions": {
-        "target": "es5", // Версия JavaScript, в которую будет транслироваться TypeScript
-        "module": "commonjs", // Система модулей
-        "strict": true, // Включает все строгие проверки типов
-        "jsx": "react", // Настройка для обработки JSX
-        "esModuleInterop": true, // Совместимость с ES-модулями
-        "skipLibCheck": true, // Пропускает проверку типов в файлах библиотек
-        "forceConsistentCasingInFileNames": true, // Требует одинакового регистра в именах файлов
-        "outDir": "./dist", // Директория для выходных файлов
-        "rootDir": "./src", // Корневая директория исходных файлов
-        "resolveJsonModule": true, // Позволяет импортировать файлы JSON
-        "isolatedModules": true // Обрабатывает каждый файл как отдельный модуль
-    },
-    "include": ["src/**/*"], // Включает все файлы в директории src и ее поддиректориях
-    "exclude": ["node_modules", "**/*.spec.ts"] // Исключает файлы в node_modules и файлы тестов
+  "compilerOptions": {
+    "target": "es5", // Версия JavaScript, в которую будет транслироваться TypeScript
+    "module": "commonjs", // Система модулей
+    "strict": true, // Включает все строгие проверки типов
+    "jsx": "react", // Настройка для обработки JSX
+    "esModuleInterop": true, // Совместимость с ES-модулями
+    "skipLibCheck": true, // Пропускает проверку типов в файлах библиотек
+    "forceConsistentCasingInFileNames": true, // Требует одинакового регистра в именах файлов
+    "outDir": "./dist", // Директория для выходных файлов
+    "rootDir": "./src", // Корневая директория исходных файлов
+    "resolveJsonModule": true, // Позволяет импортировать файлы JSON
+    "isolatedModules": true // Обрабатывает каждый файл как отдельный модуль
+  },
+  "include": ["src/**/*", "src/@types/declarations.d.ts"], // Включает все файлы в директории src и ее поддиректориях
+  "exclude": ["node_modules", "**/*.spec.ts"] // Исключает файлы в node_modules и файлы тестов
 }
