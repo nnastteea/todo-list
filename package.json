@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.tsx",
   "license": "MIT",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "start": "webpack serve --config webpack/webpack.development.ts",
     "build": "webpack --config webpack/webpack.production.ts",

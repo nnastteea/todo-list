@@ -2,22 +2,11 @@ import MenuBurger from "@assets/menu.svg";
 import React, { useEffect, useState } from "react";
 
 import * as S from "./style";
+import { useIsMobile } from "./useIseMobile";
 
 function HeaderToDo() {
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const checkSize = () => {
-      setIsMobile(window.innerWidth <= 500);
-    };
-    window.addEventListener("resize", checkSize);
-    checkSize();
-
-    return () => {
-      window.removeEventListener("resize", checkSize);
-    };
-  }, []);
 
   const openMenu = () => {
     setIsMenuOpen((prevState) => !prevState);

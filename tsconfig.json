@@ -10,7 +10,7 @@
     "outDir": "./dist", // Директория для выходных файлов
     "rootDir": "./src", // Корневая директория исходных файлов
     "resolveJsonModule": true, // Позволяет импортировать файлы JSON
-    "isolatedModules": true, // Обрабатывает каждый файл как отдельный модуль
+    "isolatedModules": true // Обрабатывает каждый файл как отдельный модуль
   },
   "include": ["src/**/*", "src/@types/declarations.d.ts"], // Включает все файлы в директории src и ее поддиректориях
   "exclude": ["node_modules", "**/*.spec.ts"] // Исключает файлы в node_modules и файлы тестов
