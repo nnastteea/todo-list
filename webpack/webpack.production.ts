@@ -1,7 +1,8 @@
-import { merge } from "webpack-merge";
-import common from "./webpack.common";
-import { Configuration } from "webpack";
 import TerserPlugin from "terser-webpack-plugin";
+import { Configuration } from "webpack";
+import { merge } from "webpack-merge";
+
+import common from "./webpack.common";
 
 const productionConfig: Configuration = {
   mode: "production",

@@ -1,7 +1,8 @@
-import path from "path";
-import HtmlWebpackPlugin from "html-webpack-plugin";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+
 import { Configuration } from "webpack";
+import path from "path";
 
 const config: Configuration = {
   entry: "./src/index.tsx",
@@ -11,7 +12,7 @@ const config: Configuration = {
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
-    alias:{'@assets':path.resolve('./src/assets'),}
+    alias: { "@assets": path.resolve("./src/assets") },
   },
   module: {
     rules: [
