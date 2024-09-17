@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import * as S from "./GlobalStyles";
-import HeaderToDo from "./components/HeaderToDo";
+
 import FormToDo from "./components/FormToDo";
+import HeaderToDo from "./components/HeaderToDo";
 import TaskList from "./components/TaskList";
+import * as S from "./GlobalStyles";
 
 function App() {
   return (

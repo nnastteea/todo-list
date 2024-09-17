@@ -1,7 +1,7 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import MenuBurger from "@assets/menu.svg";
+import React, { useEffect, useState } from "react";
+
 import * as S from "./style";
-import MenuBurger from '@assets/menu.svg';
 
 function HeaderToDo() {
   const [isMobile, setIsMobile] = useState(false);
@@ -20,7 +20,7 @@ function HeaderToDo() {
   }, []);
 
   const openMenu = () => {
-    setIsMenuOpen(prevState=>!prevState);
+    setIsMenuOpen((prevState) => !prevState);
   };
 
   return (

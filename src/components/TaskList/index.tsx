@@ -1,13 +1,14 @@
-import React, {useState} from "react";
+import Delete from "@assets/delete.svg";
+import Edit from "@assets/edit.svg";
+import React, { useState } from "react";
+
+import { tasksData } from "./constants";
 import * as S from "./style";
-import Edit from '@assets/edit.svg';
-import Delete from '@assets/delete.svg';
-import {tasksData} from "./constants"
 
 function TaskList() {
   const [tasks, setTasks] = useState(tasksData);
 
-  const handleCheckboxChange = (id: number) =>()=> {
+  const handleCheckboxChange = (id: number) => () => {
     setTasks(
       tasks.map((task) =>
         task.id === id ? { ...task, completed: !task.completed } : task,
@@ -15,16 +16,15 @@ function TaskList() {
     );
   };
 
-  const handleEdit = (id: number) =>()=> {
+  const handleEdit = (id: number) => () => {
     console.log("let`s edit your task!", { id });
   };
 
-  const handleDelete = (id: number) =>()=> {
+  const handleDelete = (id: number) => () => {
     setTasks(tasks.filter((task) => task.id !== id));
-
   };
 
-  const handleDeleteSelected = () =>{
+  const handleDeleteSelected = () => {
     setTasks(tasks.filter((task) => !task.completed));
   };
 
@@ -44,11 +44,7 @@ function TaskList() {
               />
               <S.TaskName $completed={task.completed}>{task.name}</S.TaskName>
               <S.TaskActions>
-                <img
-                  src={Edit}
-                  alt="edit"
-                  onClick={handleEdit(task.id)}
-                />
+                <img src={Edit} alt="edit" onClick={handleEdit(task.id)} />
                 <img
                   src={Delete}
                   alt="delete"
