@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,7 +68,7 @@ export const MenuIcon = styled.div`
 `;
 
 export const DropDownMenu = styled.div`
-position: absolute;
+  position: absolute;
   top: 90px;
   right: 0;
   background-color: #3e50a5;
@@ -78,20 +79,21 @@ position: absolute;
     color: white;
     cursor: pointer;
     font-size: 20px;
-     padding: 20px 50px;
+    padding: 20px 50px;
     transition: background-color 0.5s;
   }
 
-  div:hover{
-  background-color: #3e50b5;
+  div:hover {
+    background-color: #3e50b5;
   }
 
   &:last-child {
-  border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
 
   div:last-child:hover {
-   border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
 `;
 
 export const MenuItem = styled.nav`

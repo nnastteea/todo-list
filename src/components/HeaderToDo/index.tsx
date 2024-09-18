@@ -5,7 +5,7 @@ import * as S from "./style";
 import { useIsMobile } from "./useIseMobile";
 
 function HeaderToDo() {
-  const isMobile = useIsMobile();
+  const [isMobile, setIsMobile] = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openMenu = () => {
@@ -22,8 +22,8 @@ function HeaderToDo() {
           </S.MenuIcon>
           {isMenuOpen && (
             <S.DropDownMenu>
-              <S.MenuItem>Home</S.MenuItem>
-              <S.MenuItem>Settings</S.MenuItem>
+              <div>Home</div>
+              <div>Settings</div>
             </S.DropDownMenu>
           )}
         </>
