@@ -5,7 +5,7 @@ import * as S from "./style";
 import { useIsMobile } from "./useIseMobile";
 
 function HeaderToDo() {
-  const [isMobile, setIsMobile] = useIsMobile();
+  const { isMobile } = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openMenu = () => {
