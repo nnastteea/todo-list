@@ -1,16 +1,17 @@
-import { merge } from 'webpack-merge';
-import common from './webpack.common';
-import { Configuration } from 'webpack';
-import TerserPlugin from 'terser-webpack-plugin';
+import TerserPlugin from "terser-webpack-plugin";
+import { Configuration } from "webpack";
+import { merge } from "webpack-merge";
+
+import common from "./webpack.common";
 
 const productionConfig: Configuration = {
-  mode: 'production',
-  devtool: 'source-map',
+  mode: "production",
+  devtool: "source-map",
   output: {
-    filename: '[name].[contenthash].bundle.js',
+    filename: "[name].[contenthash].bundle.js",
   },
   optimization: {
-    runtimeChunk: 'single',
+    runtimeChunk: "single",
     minimize: true,
     minimizer: [
       new TerserPlugin({
@@ -24,7 +25,7 @@ const productionConfig: Configuration = {
     ],
   },
   performance: {
-    hints: 'warning',
+    hints: "warning",
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
   },
