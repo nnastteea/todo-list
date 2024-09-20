@@ -26,6 +26,7 @@ export default [
       "prettier/prettier": "error",
       "import/no-duplicates": "warn",
       "simple-import-sort/imports": "error",
+      // "linebreak-style": ["error", "unix"],
       "simple-import-sort/exports": "error",
       "import/order": [
         "error",
