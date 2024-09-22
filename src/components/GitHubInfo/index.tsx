@@ -3,15 +3,11 @@ import axios from "axios";
 import React, { useState } from "react";
 
 import * as S from "./style";
-
-type GitHubUser = {
-  login: string;
-  avatar_url: string;
-};
+import { GitHubUser } from "./types";
 
 function GitHubInfo() {
   const [inputSearch, setInputSearch] = useState("");
-  const [userData, setUserData] = useState<GitHubUser | null>(null);//userData может быть как null, так и объектом GitHubUser
+  const [userData, setUserData] = useState<GitHubUser | null>(null);
   const [error, setError] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
