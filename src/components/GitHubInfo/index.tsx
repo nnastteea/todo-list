@@ -44,7 +44,7 @@ function GitHubInfo() {
       {userData && (
         <S.UserCard>
           <div>Login: {userData.login}</div>
-          <img src={userData.avatar_url} />
+          <img src={userData.avatar_url} alt={`${userData.login}'s photo`}/>
         </S.UserCard>
       )}
     </S.FormGitHubSearch>
