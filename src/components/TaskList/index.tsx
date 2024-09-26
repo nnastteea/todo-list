@@ -2,30 +2,28 @@ import Delete from "@assets/delete.svg";
 import Edit from "@assets/edit.svg";
 import React, { useState } from "react";
 
-import { tasksData } from "./constants";
+import { Task, TaskListProps } from "../../interfaces";
 import * as S from "./style";
 
-function TaskList() {
-  const [tasks, setTasks] = useState(tasksData);
-
+function TaskList({ tasks, setTasks, setIsEditTask }: TaskListProps) {
   const handleCheckboxChange = (id: number) => () => {
-    setTasks(
-      tasks.map((task) =>
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
         task.id === id ? { ...task, completed: !task.completed } : task,
       ),
     );
   };
 
-  const handleEdit = (id: number) => () => {
-    console.log("let`s edit your task!", { id });
+  const handleEdit = (task: Task) => () => {
+    setIsEditTask(task);
   };
 
   const handleDelete = (id: number) => () => {
-    setTasks(tasks.filter((task) => task.id !== id));
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
 
   const handleDeleteSelected = () => {
-    setTasks(tasks.filter((task) => !task.completed));
+    setTasks((prevTasks) => prevTasks.filter((task) => !task.completed));
   };
 
   return (
@@ -44,7 +42,7 @@ function TaskList() {
               />
               <S.TaskName $completed={task.completed}>{task.name}</S.TaskName>
               <S.TaskActions>
-                <img src={Edit} alt="edit" onClick={handleEdit(task.id)} />
+                <img src={Edit} alt="edit" onClick={handleEdit(task)} />
                 <img
                   src={Delete}
                   alt="delete"

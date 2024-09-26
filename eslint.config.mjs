@@ -26,24 +26,19 @@ export default [
       "prettier/prettier": "error",
       "import/no-duplicates": "warn",
       "simple-import-sort/imports": "error",
-      // "linebreak-style": ["error", "unix"],
+      "linebreak-style": ["error", "unix"],
       "simple-import-sort/exports": "error",
       "import/order": [
         "error",
         {
           groups: [
-            "external",
             "builtin",
-            "index",
-            "sibling",
-            "parent",
+            "external",
             "internal",
+            ["sibling", "parent"],
+            "index",
             "type",
           ],
-          alphabetize: {
-            order: "asc",
-            caseInsensitive: true,
-          },
           "newlines-between": "always-and-inside-groups",
         },
       ],

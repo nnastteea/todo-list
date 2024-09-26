@@ -1,8 +1,7 @@
+import path from "path";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
-
 import { Configuration } from "webpack";
-import path from "path";
 
 const config: Configuration = {
   entry: "./src/index.tsx",
