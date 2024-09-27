@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import MenuBurger from "@assets/menu.svg";
 
 import * as S from "./style";
-import { useIsMobile } from "./useIseMobile";
+import { useIsMobile } from "./useIsMobile";
 
 function HeaderToDo() {
   const { isMobile } = useIsMobile();
@@ -22,15 +23,20 @@ function HeaderToDo() {
           </S.MenuIcon>
           {isMenuOpen && (
             <S.DropDownMenu>
-              <div>Home</div>
-              <div>Settings</div>
+              <S.StyledLink to="/">
+                <div>Home</div>
+              </S.StyledLink>
+              <S.StyledLink to="/settings">
+                <div>Settings</div>
+              </S.StyledLink>
             </S.DropDownMenu>
           )}
         </>
       ) : (
         <S.NavContainer>
-          <S.MenuItem>Home</S.MenuItem>
-          <S.MenuItem>Settings</S.MenuItem>
+          <S.MenuItem to="/">Home</S.MenuItem>
+
+          <S.MenuItem to="/settings">Settings</S.MenuItem>
         </S.NavContainer>
       )}
     </S.HeaderContainer>
