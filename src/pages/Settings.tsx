@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import GeneralLayout from "./GeneralLauout";
 import GitHubInfo from "../components/GitHubInfo";
 import Theme from "../components/Theme";
 import * as S from "../GlobalStyles";
+import GeneralLayout from "./GeneralLauout";
 
 function Settings() {
   return (

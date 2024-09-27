@@ -1,5 +1,5 @@
-import MenuBurger from "@assets/menu.svg";
 import React, { useEffect, useState } from "react";
+import MenuBurger from "@assets/menu.svg";
 
 import * as S from "./style";
 import { useIsMobile } from "./useIseMobile";
