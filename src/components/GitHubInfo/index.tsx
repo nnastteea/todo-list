@@ -1,6 +1,6 @@
+import React, { useState } from "react";
 import Search from "@assets/search.svg";
 import axios from "axios";
-import React, { useState } from "react";
 
 import * as S from "./style";
 import { GitHubUser } from "./types";

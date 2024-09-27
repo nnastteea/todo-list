@@ -1,4 +1,4 @@
-import { Task } from "@interfaces/interfaces";
+import { Task } from "@interfaces/Task";
 
 export interface TaskListProps {
   tasks: Task[];

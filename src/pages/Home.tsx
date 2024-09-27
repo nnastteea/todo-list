@@ -1,6 +1,6 @@
-import { Task } from "@interfaces/interfaces";
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
+import { Task } from "@interfaces/Task";
 
 import FormToDo from "../components/FormToDo";
 import TaskList from "../components/TaskList";

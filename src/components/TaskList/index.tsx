@@ -1,10 +1,10 @@
+import React, { useState } from "react";
 import Delete from "@assets/delete.svg";
 import Edit from "@assets/edit.svg";
-import { Task } from "@interfaces/interfaces";
-import React, { useState } from "react";
+import { Task } from "@interfaces/Task";
 
-import { TaskListProps } from "./interface";
 import * as S from "./style";
+import { TaskListProps } from "./TaskListProps";
 
 function TaskList({ tasks, setTasks, setIsEditTask }: TaskListProps) {
   const handleCheckboxChange = (id: number) => () => {

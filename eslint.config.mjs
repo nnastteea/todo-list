@@ -25,9 +25,20 @@ export default [
     rules: {
       "prettier/prettier": "error",
       "import/no-duplicates": "warn",
-      "simple-import-sort/imports": "error",
-      "linebreak-style": ["error", "unix"],
+      "simple-import-sort/imports": [
+        "error",
+        {
+          groups: [
+            ["^react", "^@?\\w"],
+            ["^node:\\w", "^\\w"],
+            ["^(@|components|utils|hooks|config)(/.*|$)"],
+            ["^\\.\\.(?!/?$)", "^\\.\\./?$", "^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+            ["^.+\\.s?css$"],
+          ],
+        },
+      ],
       "simple-import-sort/exports": "error",
+      "linebreak-style": ["error", "unix"],
     },
   },
 ];

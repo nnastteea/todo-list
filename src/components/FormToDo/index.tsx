@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { FormToDoProps } from "./interface";
+import { FormToDoProps } from "./FormToDoProps";
 import * as S from "./style";
 
 function FormToDo({ addTask, isEditTask, editTask }: FormToDoProps) {

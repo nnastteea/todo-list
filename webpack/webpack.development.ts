@@ -1,9 +1,9 @@
-import "webpack-dev-server";
-
 import { Configuration } from "webpack";
 import { merge } from "webpack-merge";
 
 import common from "./webpack.common";
+
+import "webpack-dev-server";
 
 const developmentConfig: Configuration = {
   mode: "development",
