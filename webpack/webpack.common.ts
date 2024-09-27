@@ -1,6 +1,6 @@
-import path from "path";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import path from "path";
 import { Configuration } from "webpack";
 
 const config: Configuration = {
@@ -11,7 +11,10 @@ const config: Configuration = {
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
-    alias: { "@assets": path.resolve("./src/assets") },
+    alias: {
+      "@assets": path.resolve("./src/assets"),
+      "@interfaces": path.resolve("./src/interfaces"),
+    },
   },
   module: {
     rules: [

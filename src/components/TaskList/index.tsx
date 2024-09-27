@@ -1,8 +1,9 @@
 import Delete from "@assets/delete.svg";
 import Edit from "@assets/edit.svg";
+import { Task } from "@interfaces/interfaces";
 import React, { useState } from "react";
 
-import { Task, TaskListProps } from "../../interfaces";
+import { TaskListProps } from "./interface";
 import * as S from "./style";
 
 function TaskList({ tasks, setTasks, setIsEditTask }: TaskListProps) {

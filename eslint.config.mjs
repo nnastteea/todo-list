@@ -28,20 +28,6 @@ export default [
       "simple-import-sort/imports": "error",
       "linebreak-style": ["error", "unix"],
       "simple-import-sort/exports": "error",
-      "import/order": [
-        "error",
-        {
-          groups: [
-            "builtin",
-            "external",
-            "internal",
-            ["sibling", "parent"],
-            "index",
-            "type",
-          ],
-          "newlines-between": "always-and-inside-groups",
-        },
-      ],
     },
   },
 ];

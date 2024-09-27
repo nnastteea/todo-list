@@ -1,10 +1,10 @@
+import { Task } from "@interfaces/interfaces";
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
 import FormToDo from "../components/FormToDo";
 import TaskList from "../components/TaskList";
 import * as S from "../GlobalStyles";
-import { Task } from "../interfaces";
 import GeneralLayout from "./GeneralLauout";
 
 function Home() {
