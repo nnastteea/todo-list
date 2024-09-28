@@ -14,7 +14,8 @@
     "baseUrl": "./src",
     "paths": {
       "@interfaces/*": ["interfaces/*"],
-      "@assets/*": ["assets/*"]
+      "@assets/*": ["assets/*"],
+      "@routes/*": ["routes/*"],
     } // Обрабатывает каждый файл как отдельный модуль
   },
   "include": ["src/**/*", "src/@types/declarations.d.ts"], // Включает все файлы в директории src и ее поддиректориях
