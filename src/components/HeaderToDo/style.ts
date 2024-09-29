@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
@@ -75,32 +76,44 @@ export const DropDownMenu = styled.div`
   display: flex;
   flex-direction: column;
 
-  div {
-    color: white;
-    cursor: pointer;
-    font-size: 20px;
-    padding: 20px 50px;
-    transition: background-color 0.5s;
-  }
-
-  div:hover {
-    background-color: #3e50b5;
-  }
-
   &:last-child {
-    border-bottom-left-radius: 10px;
-  }
-
-  div:last-child:hover {
     border-bottom-left-radius: 10px;
   }
 `;
 
-export const MenuItem = styled.nav`
+export const MenuItem = styled(NavLink)`
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
   cursor: pointer;
   transition: 0.5s ease;
 
   &:hover {
     transform: scale(1.05);
+  }
+  &.active {
+    transform: scale(1.07);
+    color: #cccccc;
+  }
+`;
+
+export const StyledLink = styled(NavLink)`
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 20px 50px;
+  transition: background-color 0.5s;
+
+  &:hover {
+    background-color: #3e50b5;
+  }
+
+  &:last-child:hover {
+    border-bottom-left-radius: 10px;
+  }
+
+  &.active {
+    color: #cccccc;
   }
 `;
