@@ -25,19 +25,19 @@ function HeaderToDo() {
           {isMenuOpen && (
             <S.DropDownMenu>
               <S.StyledLink to={routes.HOME}>
-                <div>Home</div>
+                <p>Home</p>
               </S.StyledLink>
               <S.StyledLink to={routes.SETTINGS}>
-                <div>Settings</div>
+                <p>Settings</p>
               </S.StyledLink>
             </S.DropDownMenu>
           )}
         </>
       ) : (
         <S.NavContainer>
-          <S.MenuItem to="/">Home</S.MenuItem>
+          <S.MenuItem to={routes.HOME}>Home</S.MenuItem>
 
-          <S.MenuItem to="/settings">Settings</S.MenuItem>
+          <S.MenuItem to={routes.SETTINGS}>Settings</S.MenuItem>
         </S.NavContainer>
       )}
     </S.HeaderContainer>
