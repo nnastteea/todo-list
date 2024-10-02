@@ -1,6 +1,8 @@
 import { createGlobalStyle, styled } from "styled-components";
 
-import { sizes } from "./theme";
+import { themes } from "./theme";
+
+// const { light } = themes;
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -12,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
   }
     
   &::-webkit-scrollbar {
-    width: ${sizes.xs9}px;
+    width: ${({ theme }) => theme.sizes.xs9}px;
   }
 
   &::-webkit-scrollbar-track {
@@ -21,14 +23,14 @@ export const GlobalStyle = createGlobalStyle`
 
   &::-webkit-scrollbar-thumb {
     background: ${({ theme }) => theme.colors.violetB}; 
-    border-radius: ${sizes.xs9}px; 
+    border-radius: ${({ theme }) => theme.sizes.xs9}px; 
   }
 `;
 export const MainStyle = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: ${sizes.m}px;
+  padding-top: ${({ theme }) => theme.sizes.m}px;
 `;
 
 export const SettingsStyle = styled.main`

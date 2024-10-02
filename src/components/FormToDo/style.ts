@@ -1,21 +1,23 @@
 import styled from "styled-components";
 
-import { fontSizes, sizes } from "./../../theme";
+import { themes } from "./../../theme";
+
+// const { light } = themes;
 
 export const LabelFormAdd = styled.label`
-  font-size: ${fontSizes.extraSmall3}px;
-  padding-bottom: ${sizes.xs7}px;
+  font-size: ${({ theme }) => theme.fontSizes.extraSmall3}px;
+  padding-bottom: ${({ theme }) => theme.sizes.xs7}px;
   color: ${({ theme }) => theme.colors.violetB};
 
   @media (max-width: 440px) {
-    font-size: ${fontSizes.extraSmall2}px;
+    font-size: ${({ theme }) => theme.fontSizes.extraSmall2}px;
   }
 `;
 
 export const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: ${sizes.xs5}px;
+  margin-right: ${({ theme }) => theme.sizes.xs5}px;
 `;
 
 export const FormAdd = styled.form`
@@ -33,14 +35,14 @@ export const FormAdd = styled.form`
 
 export const InputTask = styled.input`
   background: ${({ theme }) => theme.colors.white};
-  width: ${sizes.xl11}px;
+  width: ${({ theme }) => theme.sizes.xl11}px;
   border: none;
   border-bottom: 2px solid ${({ theme }) => theme.colors.violetB};
-  font-size: ${fontSizes.medium}px;
+  font-size: ${({ theme }) => theme.fontSizes.medium}px;
   outline: none;
 
   @media (max-width: 768px) {
-    width: ${sizes.xl7}px;
+    width: ${({ theme }) => theme.sizes.xl7}px;
   }
 `;
 
@@ -48,10 +50,10 @@ export const ButtonAddTask = styled.button`
   background: ${({ theme }) => theme.colors.violetB};
   color: ${({ theme }) => theme.colors.white};
   padding: 15px 30px;
-  margin-top: ${sizes.xs7}px;
-  border-radius: ${sizes.xs7}px;
+  margin-top: ${({ theme }) => theme.sizes.xs7}px;
+  border-radius: ${({ theme }) => theme.sizes.xs7}px;
   border: none;
-  font-size: ${fontSizes.extraSmall3}px;
+  font-size: ${({ theme }) => theme.fontSizes.extraSmall3}px;
   cursor: pointer;
   transition: 0.5s ease;
 
@@ -61,7 +63,7 @@ export const ButtonAddTask = styled.button`
   }
 
   @media (max-width: 600px) {
-    margin-top: ${sizes.xs}px;
+    margin-top: ${({ theme }) => theme.sizes.xs}px;
     padding: 15px 60px;
   }
 

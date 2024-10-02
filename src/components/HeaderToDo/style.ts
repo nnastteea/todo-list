@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-import { fontSizes, sizes } from "./../../theme";
+import { themes } from "./../../theme";
+
+// const { light } = themes;
 
 export const HeaderContainer = styled.header`
   position: relative;
@@ -10,45 +12,45 @@ export const HeaderContainer = styled.header`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.violetB};
   width: 100%;
-  height: ${sizes.xl2}px;
+  height: ${({ theme }) => theme.sizes.xl2}px;
   color: white;
-  font-size: ${fontSizes.extraLarge2}px;
+  font-size: ${({ theme }) => theme.fontSizes.extraLarge2}px;
   position: sticky;
   top: 0;
 
   @media (max-width: 768px) {
-    font-size: ${fontSizes.extraLarge}px;
+    font-size: ${({ theme }) => theme.fontSizes.extraLarge}px;
   }
 
   @media (max-width: 600px) {
-    font-size: ${fontSizes.medium}px;
+    font-size: ${({ theme }) => theme.fontSizes.medium}px;
   }
 
   @media (max-width: 500px) {
-    font-size: ${fontSizes.small}px;
+    font-size: ${({ theme }) => theme.fontSizes.small}px;
   }
 `;
 
 export const Title = styled.div`
   flex-grow: 1;
-  padding-left: ${sizes.xs2}px;
+  padding-left: ${({ theme }) => theme.sizes.xs2}px;
 
   @media (max-width: 500px) {
-    padding-left: ${sizes.xs4}px;
+    padding-left: ${({ theme }) => theme.sizes.xs4}px;
   }
 `;
 
 export const NavContainer = styled.nav`
   display: flex;
-  gap: ${sizes.l}px;
-  padding-right: ${sizes.xs2}px;
+  gap: ${({ theme }) => theme.sizes.l}px;
+  padding-right: ${({ theme }) => theme.sizes.xs2}px;
 
   @media (max-width: 768px) {
-    gap: ${sizes.s}px;
+    gap: ${({ theme }) => theme.sizes.s}px;
   }
 
   @media (max-width: 600px) {
-    gap: ${sizes.xs4}px;
+    gap: ${({ theme }) => theme.sizes.xs4}px;
   }
 
   @media (max-width: 500px) {
@@ -57,12 +59,12 @@ export const NavContainer = styled.nav`
 `;
 
 export const MenuIcon = styled.div`
-  padding-right: ${sizes.xs4}px;
+  padding-right: ${({ theme }) => theme.sizes.xs4}px;
   cursor: pointer;
 
   img {
-    width: ${sizes.xs}px;
-    height: ${sizes.xs}px;
+    width: ${({ theme }) => theme.sizes.xs}px;
+    height: ${({ theme }) => theme.sizes.xs}px;
   }
 
   @media (min-width: 501px) {
@@ -72,14 +74,14 @@ export const MenuIcon = styled.div`
 
 export const DropDownMenu = styled.div`
   position: absolute;
-  top: ${sizes.xl2}px;
+  top: ${({ theme }) => theme.sizes.xl2}px;
   right: 0;
   background-color: ${({ theme }) => theme.colors.violetA};
   display: flex;
   flex-direction: column;
 
   &:last-child {
-    border-bottom-left-radius: ${sizes.xs7}px;
+    border-bottom-left-radius: ${({ theme }) => theme.sizes.xs7}px;
   }
 `;
 
@@ -103,7 +105,7 @@ export const StyledLink = styled(NavLink)`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
-  font-size: ${fontSizes.extraSmall}px;
+  font-size: ${({ theme }) => theme.fontSizes.extraSmall}px;
   padding: 20px 50px;
   transition: background-color 0.5s;
 
@@ -112,7 +114,7 @@ export const StyledLink = styled(NavLink)`
   }
 
   &:last-child:hover {
-    border-bottom-left-radius: ${sizes.xs7}px;
+    border-bottom-left-radius: ${({ theme }) => theme.sizes.xs7}px;
   }
 
   &.active {

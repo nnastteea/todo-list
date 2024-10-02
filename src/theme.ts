@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createGlobalStyle, styled } from "styled-components";
 
-export const fontSizes = {
+const fontSizes = {
   extraSmall3: 16,
   extraSmall2: 18,
   extraSmall: 20,
@@ -13,7 +13,7 @@ export const fontSizes = {
   extraLarge3: 30,
 };
 
-export const sizes = {
+const sizes = {
   xs10: 0,
   xs9: 4,
   xs8: 8,
@@ -58,6 +58,8 @@ export const themes = {
       grey6: "#ebebeb",
       black: "#0c0c0c",
     },
+    fontSizes,
+    sizes,
   },
   dark: {
     colors: {
@@ -74,5 +76,7 @@ export const themes = {
       grey6: "#ebebeb",
       black: "#f9f9f9",
     },
+    fontSizes,
+    sizes,
   },
 };

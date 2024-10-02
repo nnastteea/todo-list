@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
-import { fontSizes, sizes } from "./../../theme";
+import { themes } from "./../../theme";
+
+// const { light } = themes;
 
 export const FormGitHubSearch = styled.form`
-  padding-top: ${sizes.xs4}px;
-  width: ${sizes.xl6}px;
+  padding-top: ${({ theme }) => theme.sizes.xs4}px;
+  width: ${({ theme }) => theme.sizes.xl6}px;
 
   @media (max-width: 592px) {
     width: 100%;
@@ -12,14 +14,14 @@ export const FormGitHubSearch = styled.form`
 `;
 
 export const LabelSearch = styled.p`
-  font-size: ${fontSizes.extraSmall2}px;
+  font-size: ${({ theme }) => theme.fontSizes.extraSmall2}px;
 `;
 
 export const InputSearch = styled.input`
-  width: ${sizes.xl5}px;
+  width: ${({ theme }) => theme.sizes.xl5}px;
   border: none;
   border-bottom: 2px solid ${({ theme }) => theme.colors.grey3};
-  font-size: ${fontSizes.extraSmall3}px;
+  font-size: ${({ theme }) => theme.fontSizes.extraSmall3}px;
   outline: none;
   padding: 10px 20px;
   background: ${({ theme }) => theme.colors.white};
@@ -33,12 +35,12 @@ export const SearchButton = styled.button`
   border: none;
   background: none;
   cursor: pointer;
-  padding-left: ${sizes.xs6}px;
+  padding-left: ${({ theme }) => theme.sizes.xs6}px;
   transition: 0.5s ease;
   width: auto;
 
   & > img {
-    width: ${sizes.xs3}px;
+    width: ${({ theme }) => theme.sizes.xs3}px;
     height: auto;
     display: block;
     padding: 0;
@@ -59,19 +61,19 @@ export const InputSearchContainer = styled.div`
 `;
 
 export const UserCard = styled.div`
-  margin-top: ${sizes.xs4}px;
-  padding: ${sizes.xs7}px;
+  margin-top: ${({ theme }) => theme.sizes.xs4}px;
+  padding: ${({ theme }) => theme.sizes.xs7}px;
   display: flex;
   flex-direction: column;
 
   img {
-    margin-right: ${sizes.xs7}px;
-    width: ${sizes.xl4}px;
-    height: ${sizes.xl4}px;
+    margin-right: ${({ theme }) => theme.sizes.xs7}px;
+    width: ${({ theme }) => theme.sizes.xl4}px;
+    height: ${({ theme }) => theme.sizes.xl4}px;
   }
 
   div {
-    font-size: ${fontSizes.extraSmall2}px;
-    margin-bottom: ${sizes.xs7}px;
+    font-size: ${({ theme }) => theme.fontSizes.extraSmall2}px;
+    margin-bottom: ${({ theme }) => theme.sizes.xs7}px;
   }
 `;
