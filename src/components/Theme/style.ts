@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 import { themes } from "./../../theme";
 
-// const { light } = themes;
+const PADDING_V = 15;
+const PADDING_H = 220;
 
 export const LabelTheme = styled.p`
   color: ${({ theme }) => theme.colors.grey3};
@@ -11,7 +12,7 @@ export const LabelTheme = styled.p`
 
 export const ThemeButton = styled.button`
   background: ${({ theme }) => theme.colors.grey4};
-  padding: 15px 220px;
+  padding: ${PADDING_V}px ${PADDING_H}px;
   border-radius: ${({ theme }) => theme.sizes.xs8}px;
   border: 2px solid ${({ theme }) => theme.colors.grey5};
   font-size: ${({ theme }) => theme.fontSizes.extraSmall3}px;

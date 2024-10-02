@@ -2,19 +2,23 @@ import styled from "styled-components";
 
 import { themes } from "./../../theme";
 
-// const { light } = themes;
+const PADDING_V = 15;
+const PADDING_H1 = 0;
+const PADDING_H2 = 30;
+const PADDING_H3 = 25;
+const PADDING_H4 = 120;
 
 export const HeaderTask = styled.h1`
   font-size: ${({ theme }) => theme.fontSizes.extraLarge3}px;
   padding-top: ${({ theme }) => theme.sizes.s}px;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl15}px) {
     padding-top: ${({ theme }) => theme.sizes.xs}px;
   }
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
     padding-top: ${({ theme }) => theme.sizes.xs2}px;
   }
-  @media (max-width: 500px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl12}px) {
     font-size: ${({ theme }) => theme.fontSizes.large}px;
     padding-top: ${({ theme }) => theme.sizes.xs6}px;
   }
@@ -31,16 +35,12 @@ export const TaskContainer = styled.div`
     border-top: 2px solid ${({ theme }) => theme.colors.grey2};
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl15}px) {
     width: ${({ theme }) => theme.sizes.xl12}px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
     width: ${({ theme }) => theme.sizes.xl9}px;
-  }
-
-  @media (max-width: 600px) {
-    width: ${({ theme }) => theme.sizes.xl8}px;
   }
 `;
 
@@ -48,20 +48,16 @@ export const TaskItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 0;
+  padding: ${PADDING_V}px ${PADDING_H1};
   border-bottom: 2px solid ${({ theme }) => theme.colors.grey2};
   width: ${({ theme }) => theme.sizes.xl13}px;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl15}px) {
     width: ${({ theme }) => theme.sizes.xl12}px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
     width: ${({ theme }) => theme.sizes.xl9}px;
-  }
-
-  @media (max-width: 600px) {
-    width: ${({ theme }) => theme.sizes.xl8}px;
   }
 `;
 
@@ -92,7 +88,7 @@ export const Checkbox = styled.input`
 export const DeleteSelectedButton = styled.button`
   background: ${({ theme }) => theme.colors.red};
   color: white;
-  padding: 15px 30px;
+  padding: ${PADDING_V}px ${PADDING_H2}px;
   margin-top: ${({ theme }) => theme.sizes.xs7}px;
   border-radius: ${({ theme }) => theme.sizes.xs7}px;
   border: none;
@@ -108,17 +104,17 @@ export const DeleteSelectedButton = styled.button`
     background: ${({ theme }) => theme.colors.redHover};
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl15}px) {
     margin-right: ${({ theme }) => theme.sizes.xl6}px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
     margin-right: ${({ theme }) => theme.sizes.xl4}px;
-    padding: 15px 25px;
+    padding: ${PADDING_V}px ${PADDING_H3}px;
   }
 
-  @media (max-width: 440px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl16}px) {
     margin-right: ${({ theme }) => theme.sizes.xs10}px;
-    padding: 15px 120px;
+    padding: ${PADDING_V}px ${PADDING_H4}px;
   }
 `;

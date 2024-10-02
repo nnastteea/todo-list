@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 import { themes } from "./../../theme";
 
-// const { light } = themes;
+const PADDING_V = 10;
+const PADDING_H = 20;
 
 export const FormGitHubSearch = styled.form`
   padding-top: ${({ theme }) => theme.sizes.xs4}px;
@@ -23,7 +24,7 @@ export const InputSearch = styled.input`
   border-bottom: 2px solid ${({ theme }) => theme.colors.grey3};
   font-size: ${({ theme }) => theme.fontSizes.extraSmall3}px;
   outline: none;
-  padding: 10px 20px;
+  padding: ${PADDING_V}px ${PADDING_H}px;
   background: ${({ theme }) => theme.colors.white};
 
   @media (max-width: 592px) {

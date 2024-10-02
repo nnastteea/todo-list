@@ -2,7 +2,11 @@ import { createGlobalStyle, styled } from "styled-components";
 
 import { themes } from "./theme";
 
-// const { light } = themes;
+const PADDING_V1 = 60;
+const PADDING_V2 = 40;
+const PADDING_H1 = 130;
+const PADDING_H2 = 70;
+const PADDING_H3 = 20;
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -18,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   &::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1);
+    background: ${({ theme }) => theme.colors.opacitygrey};
   }
 
   &::-webkit-scrollbar-thumb {
@@ -35,15 +39,15 @@ export const MainStyle = styled.main`
 
 export const SettingsStyle = styled.main`
   display: column;
-  padding: 60px 130px;
+  padding: ${PADDING_V1}px ${PADDING_H1}px;
 
   @media (max-width: 593px) {
     display: flex;
     flex-direction: column;
-    padding: 40px 70px;
+    padding: ${PADDING_V2}px ${PADDING_H2}px;
   }
 
   @media (max-width: 435px) {
-    padding: 40px 20px;
+    padding: ${PADDING_V2}px ${PADDING_H3}px;
   }
 `;

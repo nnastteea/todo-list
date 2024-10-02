@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 import { themes } from "./../../theme";
 
-// const { light } = themes;
+const PADDING_V = 20;
+const PADDING_H = 50;
 
 export const HeaderContainer = styled.header`
   position: relative;
@@ -18,15 +19,15 @@ export const HeaderContainer = styled.header`
   position: sticky;
   top: 0;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl15}) {
     font-size: ${({ theme }) => theme.fontSizes.extraLarge}px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
     font-size: ${({ theme }) => theme.fontSizes.medium}px;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl12}px) {
     font-size: ${({ theme }) => theme.fontSizes.small}px;
   }
 `;
@@ -35,7 +36,7 @@ export const Title = styled.div`
   flex-grow: 1;
   padding-left: ${({ theme }) => theme.sizes.xs2}px;
 
-  @media (max-width: 500px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl12}px) {
     padding-left: ${({ theme }) => theme.sizes.xs4}px;
   }
 `;
@@ -45,15 +46,15 @@ export const NavContainer = styled.nav`
   gap: ${({ theme }) => theme.sizes.l}px;
   padding-right: ${({ theme }) => theme.sizes.xs2}px;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl15}px) {
     gap: ${({ theme }) => theme.sizes.s}px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
     gap: ${({ theme }) => theme.sizes.xs4}px;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl12}px) {
     display: none;
   }
 `;
@@ -67,7 +68,7 @@ export const MenuIcon = styled.div`
     height: ${({ theme }) => theme.sizes.xs}px;
   }
 
-  @media (min-width: 501px) {
+  @media (min-width: ${({ theme }) => theme.sizes.xl12}px) {
     display: none;
   }
 `;
@@ -106,7 +107,7 @@ export const StyledLink = styled(NavLink)`
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
   font-size: ${({ theme }) => theme.fontSizes.extraSmall}px;
-  padding: 20px 50px;
+  padding: ${PADDING_V}px ${PADDING_H}px;
   transition: background-color 0.5s;
 
   &:hover {

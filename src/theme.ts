@@ -38,8 +38,11 @@ const sizes = {
   xl9: 370,
   xl10: 380,
   xl11: 400,
+  xl16: 440,
   xl12: 500,
   xl13: 550,
+  xl14: 600,
+  xl15: 768,
 };
 
 export const themes = {
@@ -57,6 +60,7 @@ export const themes = {
       grey5: "#a1a1a1",
       grey6: "#ebebeb",
       black: "#0c0c0c",
+      opacitygrey: " rgba(0, 0, 0, 0.1) ",
     },
     fontSizes,
     sizes,
@@ -75,6 +79,7 @@ export const themes = {
       grey5: "#a1a1a1",
       grey6: "#ebebeb",
       black: "#f9f9f9",
+      opacitygrey: " rgba(0, 0, 0, 0.1) ",
     },
     fontSizes,
     sizes,

@@ -2,14 +2,17 @@ import styled from "styled-components";
 
 import { themes } from "./../../theme";
 
-// const { light } = themes;
+const PADDING_V = 15;
+const PADDING_H1 = 30;
+const PADDING_H2 = 60;
+const PADDING_H3 = 140;
 
 export const LabelFormAdd = styled.label`
   font-size: ${({ theme }) => theme.fontSizes.extraSmall3}px;
   padding-bottom: ${({ theme }) => theme.sizes.xs7}px;
   color: ${({ theme }) => theme.colors.violetB};
 
-  @media (max-width: 440px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl16}px) {
     font-size: ${({ theme }) => theme.fontSizes.extraSmall2}px;
   }
 `;
@@ -24,7 +27,7 @@ export const FormAdd = styled.form`
   display: flex;
   align-items: center;
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
     flex-direction: column;
   }
 
@@ -41,7 +44,7 @@ export const InputTask = styled.input`
   font-size: ${({ theme }) => theme.fontSizes.medium}px;
   outline: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl15}px) {
     width: ${({ theme }) => theme.sizes.xl7}px;
   }
 `;
@@ -49,7 +52,7 @@ export const InputTask = styled.input`
 export const ButtonAddTask = styled.button`
   background: ${({ theme }) => theme.colors.violetB};
   color: ${({ theme }) => theme.colors.white};
-  padding: 15px 30px;
+  padding: ${PADDING_V}px ${PADDING_H1}px;
   margin-top: ${({ theme }) => theme.sizes.xs7}px;
   border-radius: ${({ theme }) => theme.sizes.xs7}px;
   border: none;
@@ -62,12 +65,12 @@ export const ButtonAddTask = styled.button`
     background: ${({ theme }) => theme.colors.violetA};
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
     margin-top: ${({ theme }) => theme.sizes.xs}px;
-    padding: 15px 60px;
+    padding: ${PADDING_V}px ${PADDING_H2}px;
   }
 
-  @media (max-width: 440px) {
-    padding: 15px 140px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl16}px) {
+    padding: ${PADDING_V}px ${PADDING_H3}px;
   }
 `;
