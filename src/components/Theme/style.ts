@@ -1,23 +1,25 @@
 import styled from "styled-components";
 
+import { fontSizes, sizes } from "./../../theme";
+
 export const LabelTheme = styled.p`
-  color: #646464;
-  font-size: 18px;
+  color: ${({ theme }) => theme.colors.grey3};
+  font-size: ${fontSizes.extraSmall2}px;
 `;
 
 export const ThemeButton = styled.button`
-  background: #fffafa;
+  background: ${({ theme }) => theme.colors.grey4};
   padding: 15px 220px;
-  border-radius: 8px;
-  border: 2px solid #a1a1a1;
-  font-size: 16px;
+  border-radius: ${sizes.xs8}px;
+  border: 2px solid ${({ theme }) => theme.colors.grey5};
+  font-size: ${fontSizes.extraSmall3}px;
   cursor: pointer;
   text-align: left;
-  padding-left: 20px;
+  padding-left: ${sizes.xs4}px;
   transition: 0.5s ease;
 
   &:hover {
     transform: scale(1.02);
-    background: #ebebeb;
+    background: ${({ theme }) => theme.colors.grey6};
   }
 `;

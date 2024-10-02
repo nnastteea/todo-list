@@ -1,15 +1,18 @@
 import { createGlobalStyle, styled } from "styled-components";
 
+import { sizes } from "./theme";
+
 export const GlobalStyle = createGlobalStyle`
 
   body {
+    background: ${({ theme }) => theme.colors.white};
     margin: 0; 
     padding: 0; 
     font-family: "Jost", sans-serif;
   }
     
   &::-webkit-scrollbar {
-    width: 4px;
+    width: ${sizes.xs9}px;
   }
 
   &::-webkit-scrollbar-track {
@@ -17,15 +20,15 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #3e50b5; 
-    border-radius: 3px; 
+    background: ${({ theme }) => theme.colors.violetB}; 
+    border-radius: ${sizes.xs9}px; 
   }
 `;
 export const MainStyle = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 60px;
+  padding-top: ${sizes.m}px;
 `;
 
 export const SettingsStyle = styled.main`

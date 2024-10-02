@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
+import { fontSizes, sizes } from "./../../theme";
+
 export const FormGitHubSearch = styled.form`
-  padding-top: 20px;
-  width: 330px;
+  padding-top: ${sizes.xs4}px;
+  width: ${sizes.xl6}px;
 
   @media (max-width: 592px) {
     width: 100%;
@@ -10,16 +12,17 @@ export const FormGitHubSearch = styled.form`
 `;
 
 export const LabelSearch = styled.p`
-  font-size: 18px;
+  font-size: ${fontSizes.extraSmall2}px;
 `;
 
 export const InputSearch = styled.input`
-  width: 245px;
+  width: ${sizes.xl5}px;
   border: none;
-  border-bottom: 2px solid #646464;
-  font-size: 16px;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.grey3};
+  font-size: ${fontSizes.extraSmall3}px;
   outline: none;
   padding: 10px 20px;
+  background: ${({ theme }) => theme.colors.white};
 
   @media (max-width: 592px) {
     width: 80%;
@@ -30,12 +33,12 @@ export const SearchButton = styled.button`
   border: none;
   background: none;
   cursor: pointer;
-  padding-left: 15px;
+  padding-left: ${sizes.xs6}px;
   transition: 0.5s ease;
   width: auto;
 
   & > img {
-    width: 24px;
+    width: ${sizes.xs3}px;
     height: auto;
     display: block;
     padding: 0;
@@ -44,11 +47,8 @@ export const SearchButton = styled.button`
   }
 
   &:hover > img {
-    transform: scale(1.05); /* Увеличиваем изображение */
-    filter: brightness(0.5) invert(0.5); /* Изменяем цвет (можно настроить) */
-  }
-
-  @media (max-width: 592px) {
+    transform: scale(1.05);
+    filter: brightness(0.5) invert(0.5);
   }
 `;
 
@@ -59,19 +59,19 @@ export const InputSearchContainer = styled.div`
 `;
 
 export const UserCard = styled.div`
-  margin-top: 20px;
-  padding: 10px;
+  margin-top: ${sizes.xs4}px;
+  padding: ${sizes.xs7}px;
   display: flex;
   flex-direction: column;
 
   img {
-    margin-right: 10px;
-    width: 200px;
-    height: 200px;
+    margin-right: ${sizes.xs7}px;
+    width: ${sizes.xl4}px;
+    height: ${sizes.xl4}px;
   }
 
   div {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: ${fontSizes.extraSmall2}px;
+    margin-bottom: ${sizes.xs7}px;
   }
 `;
