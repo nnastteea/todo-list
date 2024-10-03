@@ -1,8 +1,8 @@
 import React from "react";
+import { themes } from "@theme/theme";
 import { ThemeProvider } from "styled-components";
 
 import App from "./App";
-import { themes } from "./theme";
 
 const Main = () => {
   const currentTheme = themes.light;

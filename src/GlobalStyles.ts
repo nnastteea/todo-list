@@ -1,6 +1,5 @@
+import { themes } from "@theme/theme";
 import { createGlobalStyle, styled } from "styled-components";
-
-import { themes } from "./theme";
 
 const PADDING_V1 = 60;
 const PADDING_V2 = 40;

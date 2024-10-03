@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
+import { themes } from "@theme/theme";
 import styled from "styled-components";
-
-import { themes } from "./../../theme";
 
 const PADDING_V = 20;
 const PADDING_H = 50;
@@ -32,12 +31,22 @@ export const HeaderContainer = styled.header`
   }
 `;
 
-export const Title = styled.div`
+export const Title = styled.h1`
   flex-grow: 1;
   padding-left: ${({ theme }) => theme.sizes.xs2}px;
+  font-size: ${({ theme }) => theme.fontSizes.extraLarge2}px;
+  font-weight: normal;
+
+  @media (max-width: ${({ theme }) => theme.sizes.xl15}) {
+    font-size: ${({ theme }) => theme.fontSizes.extraLarge}px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
+    font-size: ${({ theme }) => theme.fontSizes.medium}px;
+  }
 
   @media (max-width: ${({ theme }) => theme.sizes.xl12}px) {
-    padding-left: ${({ theme }) => theme.sizes.xs4}px;
+    font-size: ${({ theme }) => theme.fontSizes.small}px;
   }
 `;
 
@@ -59,7 +68,7 @@ export const NavContainer = styled.nav`
   }
 `;
 
-export const MenuIcon = styled.div`
+export const MenuImgContainer = styled.div`
   padding-right: ${({ theme }) => theme.sizes.xs4}px;
   cursor: pointer;
 

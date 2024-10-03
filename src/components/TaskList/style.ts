@@ -1,6 +1,5 @@
+import { themes } from "@theme/theme";
 import styled from "styled-components";
-
-import { themes } from "./../../theme";
 
 const PADDING_V = 15;
 const PADDING_H1 = 0;
