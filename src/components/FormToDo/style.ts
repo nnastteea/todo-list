@@ -1,26 +1,32 @@
+import { themes } from "@theme/theme";
 import styled from "styled-components";
 
-export const LabelFormAdd = styled.label`
-  font-size: 16px;
-  padding-bottom: 10px;
-  color: #3e50b5;
+const PADDING_V = 15;
+const PADDING_H1 = 30;
+const PADDING_H2 = 60;
+const PADDING_H3 = 140;
 
-  @media (max-width: 440px) {
-    font-size: 18px;
+export const LabelFormAdd = styled.label`
+  font-size: ${({ theme }) => theme.fontSizes.extraSmall3}px;
+  padding-bottom: ${({ theme }) => theme.sizes.xs7}px;
+  color: ${({ theme }) => theme.colors.violetB};
+
+  @media (max-width: ${({ theme }) => theme.sizes.xl16}px) {
+    font-size: ${({ theme }) => theme.fontSizes.extraSmall2}px;
   }
 `;
 
 export const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: 16px;
+  margin-right: ${({ theme }) => theme.sizes.xs5}px;
 `;
 
 export const FormAdd = styled.form`
   display: flex;
   align-items: center;
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
     flex-direction: column;
   }
 
@@ -30,40 +36,40 @@ export const FormAdd = styled.form`
 `;
 
 export const InputTask = styled.input`
-  width: 400px;
+  background: ${({ theme }) => theme.colors.white};
+  width: ${({ theme }) => theme.sizes.xl11}px;
   border: none;
-  border-bottom: 2px solid #3e50b5;
-  font-size: 24px;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.violetB};
+  font-size: ${({ theme }) => theme.fontSizes.medium}px;
   outline: none;
 
-  @media (max-width: 768px) {
-    width: 350px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl15}px) {
+    width: ${({ theme }) => theme.sizes.xl7}px;
   }
 `;
 
 export const ButtonAddTask = styled.button`
-  background: #3e50b5;
-  color: white;
-  padding: 15px 30px;
-  margin-top: 10px;
-  border-radius: 10px;
+  background: ${({ theme }) => theme.colors.violetB};
+  color: ${({ theme }) => theme.colors.white};
+  padding: ${PADDING_V}px ${PADDING_H1}px;
+  margin-top: ${({ theme }) => theme.sizes.xs7}px;
+  border-radius: ${({ theme }) => theme.sizes.xs7}px;
   border: none;
-  font-size: 16px;
+  font-size: ${({ theme }) => theme.fontSizes.extraSmall3}px;
   cursor: pointer;
   transition: 0.5s ease;
 
   &:hover {
     transform: scale(1.05);
-    background: #3e50a5;
+    background: ${({ theme }) => theme.colors.violetA};
   }
 
-  @media (max-width: 600px) {
-    margin-top: 40px;
-    padding: 15px 60px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
+    margin-top: ${({ theme }) => theme.sizes.xs}px;
+    padding: ${PADDING_V}px ${PADDING_H2}px;
   }
 
-  @media (max-width: 440px) {
-    margin-top: 40px;
-    padding: 15px 140px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl16}px) {
+    padding: ${PADDING_V}px ${PADDING_H3}px;
   }
 `;

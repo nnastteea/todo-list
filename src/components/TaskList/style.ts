@@ -1,42 +1,45 @@
+import { themes } from "@theme/theme";
 import styled from "styled-components";
 
-export const HeaderTask = styled.h1`
-  font-size: 30px;
-  padding-top: 50px;
+const PADDING_V = 15;
+const PADDING_H1 = 0;
+const PADDING_H2 = 30;
+const PADDING_H3 = 25;
+const PADDING_H4 = 120;
 
-  @media (max-width: 768px) {
-    padding-top: 40px;
+export const HeaderTask = styled.h1`
+  font-size: ${({ theme }) => theme.fontSizes.extraLarge3}px;
+  padding-top: ${({ theme }) => theme.sizes.s}px;
+
+  @media (max-width: ${({ theme }) => theme.sizes.xl15}px) {
+    padding-top: ${({ theme }) => theme.sizes.xs}px;
   }
-  @media (max-width: 600px) {
-    padding-top: 25px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
+    padding-top: ${({ theme }) => theme.sizes.xs2}px;
   }
-  @media (max-width: 500px) {
-    font-size: 25px;
-    padding-top: 15px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl12}px) {
+    font-size: ${({ theme }) => theme.fontSizes.large}px;
+    padding-top: ${({ theme }) => theme.sizes.xs6}px;
   }
 `;
 
 export const TaskContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding-bottom: 10px;
-  width: 550px;
+  gap: ${({ theme }) => theme.sizes.xs6}px;
+  padding-bottom: ${({ theme }) => theme.sizes.xs7}px;
+  width: ${({ theme }) => theme.sizes.xl13}px;
 
   & > :first-of-type:not(p) {
-    border-top: 2px solid #979797;
+    border-top: 2px solid ${({ theme }) => theme.colors.grey2};
   }
 
-  @media (max-width: 768px) {
-    width: 500px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl15}px) {
+    width: ${({ theme }) => theme.sizes.xl12}px;
   }
 
-  @media (max-width: 600px) {
-    width: 370px;
-  }
-
-  @media (max-width: 600px) {
-    width: 360px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
+    width: ${({ theme }) => theme.sizes.xl9}px;
   }
 `;
 
@@ -44,77 +47,73 @@ export const TaskItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 0;
-  border-bottom: 2px solid #979797;
-  width: 550px;
+  padding: ${PADDING_V}px ${PADDING_H1};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.grey2};
+  width: ${({ theme }) => theme.sizes.xl13}px;
 
-  @media (max-width: 768px) {
-    width: 500px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl15}px) {
+    width: ${({ theme }) => theme.sizes.xl12}px;
   }
 
-  @media (max-width: 600px) {
-    width: 370px;
-  }
-
-  @media (max-width: 600px) {
-    width: 360px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
+    width: ${({ theme }) => theme.sizes.xl9}px;
   }
 `;
 
 export const TaskActions = styled.div`
   display: flex;
-  gap: 10px;
+  gap: ${({ theme }) => theme.sizes.xs7}px;
 
   img {
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    width: ${({ theme }) => theme.sizes.xs4}px;
+    height: ${({ theme }) => theme.sizes.xs4}px;
   }
 `;
 
 export const TaskName = styled.span<{ $completed: boolean }>`
   flex-grow: 1;
-  margin-left: 10px;
+  margin-left: ${({ theme }) => theme.sizes.xs7}px;
   text-decoration: ${({ $completed }) =>
     $completed ? "line-through" : "none"};
 `;
 
 export const Checkbox = styled.input`
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  width: ${({ theme }) => theme.sizes.xs4}px;
+  height: ${({ theme }) => theme.sizes.xs4}px;
 `;
 
 export const DeleteSelectedButton = styled.button`
-  background: #d00038;
+  background: ${({ theme }) => theme.colors.red};
   color: white;
-  padding: 15px 30px;
-  margin-top: 10px;
-  border-radius: 10px;
+  padding: ${PADDING_V}px ${PADDING_H2}px;
+  margin-top: ${({ theme }) => theme.sizes.xs7}px;
+  border-radius: ${({ theme }) => theme.sizes.xs7}px;
   border: none;
-  font-size: 16px;
+  font-size: ${({ theme }) => theme.fontSizes.extraSmall3}px;
   cursor: pointer;
   transition: 0.5s ease;
-  margin-right: 380px;
-  margin-top: 20px;
-  margin-bottom: 60px;
+  margin-right: ${({ theme }) => theme.sizes.xl10}px;
+  margin-top: ${({ theme }) => theme.sizes.xs4}px;
+  margin-bottom: ${({ theme }) => theme.sizes.m}px;
 
   &:hover {
     transform: scale(1.05);
-    background: #c30437;
+    background: ${({ theme }) => theme.colors.redHover};
   }
 
-  @media (max-width: 768px) {
-    margin-right: 330px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl15}px) {
+    margin-right: ${({ theme }) => theme.sizes.xl6}px;
   }
 
-  @media (max-width: 600px) {
-    margin-right: 200px;
-    padding: 15px 25px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
+    margin-right: ${({ theme }) => theme.sizes.xl4}px;
+    padding: ${PADDING_V}px ${PADDING_H3}px;
   }
 
-  @media (max-width: 440px) {
-    margin-right: 0px;
-    padding: 15px 120px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl16}px) {
+    margin-right: ${({ theme }) => theme.sizes.xs10}px;
+    padding: ${PADDING_V}px ${PADDING_H4}px;
   }
 `;

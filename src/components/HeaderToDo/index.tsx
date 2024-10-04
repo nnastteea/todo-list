@@ -19,9 +19,9 @@ function HeaderToDo() {
       <S.Title>Modsen ToDo List</S.Title>
       {isMobile ? (
         <>
-          <S.MenuIcon onClick={openMenu}>
+          <S.MenuImgContainer onClick={openMenu}>
             <img src={MenuBurger} alt="menu" />
-          </S.MenuIcon>
+          </S.MenuImgContainer>
           {isMenuOpen && (
             <S.DropDownMenu>
               <S.StyledLink to={routes.HOME}>

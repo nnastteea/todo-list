@@ -1,8 +1,12 @@
+import { themes } from "@theme/theme";
 import styled from "styled-components";
 
+const PADDING_V = 10;
+const PADDING_H = 20;
+
 export const FormGitHubSearch = styled.form`
-  padding-top: 20px;
-  width: 330px;
+  padding-top: ${({ theme }) => theme.sizes.xs4}px;
+  width: ${({ theme }) => theme.sizes.xl6}px;
 
   @media (max-width: 592px) {
     width: 100%;
@@ -10,16 +14,17 @@ export const FormGitHubSearch = styled.form`
 `;
 
 export const LabelSearch = styled.p`
-  font-size: 18px;
+  font-size: ${({ theme }) => theme.fontSizes.extraSmall2}px;
 `;
 
 export const InputSearch = styled.input`
-  width: 245px;
+  width: ${({ theme }) => theme.sizes.xl5}px;
   border: none;
-  border-bottom: 2px solid #646464;
-  font-size: 16px;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.grey3};
+  font-size: ${({ theme }) => theme.fontSizes.extraSmall3}px;
   outline: none;
-  padding: 10px 20px;
+  padding: ${PADDING_V}px ${PADDING_H}px;
+  background: ${({ theme }) => theme.colors.white};
 
   @media (max-width: 592px) {
     width: 80%;
@@ -30,12 +35,12 @@ export const SearchButton = styled.button`
   border: none;
   background: none;
   cursor: pointer;
-  padding-left: 15px;
+  padding-left: ${({ theme }) => theme.sizes.xs6}px;
   transition: 0.5s ease;
   width: auto;
 
   & > img {
-    width: 24px;
+    width: ${({ theme }) => theme.sizes.xs3}px;
     height: auto;
     display: block;
     padding: 0;
@@ -44,11 +49,8 @@ export const SearchButton = styled.button`
   }
 
   &:hover > img {
-    transform: scale(1.05); /* Увеличиваем изображение */
-    filter: brightness(0.5) invert(0.5); /* Изменяем цвет (можно настроить) */
-  }
-
-  @media (max-width: 592px) {
+    transform: scale(1.05);
+    filter: brightness(0.5) invert(0.5);
   }
 `;
 
@@ -59,19 +61,19 @@ export const InputSearchContainer = styled.div`
 `;
 
 export const UserCard = styled.div`
-  margin-top: 20px;
-  padding: 10px;
+  margin-top: ${({ theme }) => theme.sizes.xs4}px;
+  padding: ${({ theme }) => theme.sizes.xs7}px;
   display: flex;
   flex-direction: column;
 
   img {
-    margin-right: 10px;
-    width: 200px;
-    height: 200px;
+    margin-right: ${({ theme }) => theme.sizes.xs7}px;
+    width: ${({ theme }) => theme.sizes.xl4}px;
+    height: ${({ theme }) => theme.sizes.xl4}px;
   }
 
   div {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: ${({ theme }) => theme.fontSizes.extraSmall2}px;
+    margin-bottom: ${({ theme }) => theme.sizes.xs7}px;
   }
 `;

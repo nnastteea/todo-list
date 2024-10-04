@@ -1,23 +1,27 @@
+import { themes } from "@theme/theme";
 import styled from "styled-components";
 
+const PADDING_V = 15;
+const PADDING_H = 220;
+
 export const LabelTheme = styled.p`
-  color: #646464;
-  font-size: 18px;
+  color: ${({ theme }) => theme.colors.grey3};
+  font-size: ${({ theme }) => theme.fontSizes.extraSmall2}px;
 `;
 
 export const ThemeButton = styled.button`
-  background: #fffafa;
-  padding: 15px 220px;
-  border-radius: 8px;
-  border: 2px solid #a1a1a1;
-  font-size: 16px;
+  background: ${({ theme }) => theme.colors.grey4};
+  padding: ${PADDING_V}px ${PADDING_H}px;
+  border-radius: ${({ theme }) => theme.sizes.xs8}px;
+  border: 2px solid ${({ theme }) => theme.colors.grey5};
+  font-size: ${({ theme }) => theme.fontSizes.extraSmall3}px;
   cursor: pointer;
   text-align: left;
-  padding-left: 20px;
+  padding-left: ${({ theme }) => theme.sizes.xs4}px;
   transition: 0.5s ease;
 
   &:hover {
     transform: scale(1.02);
-    background: #ebebeb;
+    background: ${({ theme }) => theme.colors.grey6};
   }
 `;

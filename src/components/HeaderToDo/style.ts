@@ -1,83 +1,97 @@
 import { NavLink } from "react-router-dom";
+import { themes } from "@theme/theme";
 import styled from "styled-components";
+
+const PADDING_V = 20;
+const PADDING_H = 50;
 
 export const HeaderContainer = styled.header`
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3e50b5;
+  background-color: ${({ theme }) => theme.colors.violetB};
   width: 100%;
-  height: 90px;
+  height: ${({ theme }) => theme.sizes.xl2}px;
   color: white;
-  font-size: 28px;
+  font-size: ${({ theme }) => theme.fontSizes.extraLarge2}px;
   position: sticky;
   top: 0;
 
-  @media (max-width: 768px) {
-    font-size: 26px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl15}) {
+    font-size: ${({ theme }) => theme.fontSizes.extraLarge}px;
   }
 
-  @media (max-width: 600px) {
-    font-size: 24px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
+    font-size: ${({ theme }) => theme.fontSizes.medium}px;
   }
 
-  @media (max-width: 500px) {
-    font-size: 22px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl12}px) {
+    font-size: ${({ theme }) => theme.fontSizes.small}px;
   }
 `;
 
-export const Title = styled.div`
+export const Title = styled.h1`
   flex-grow: 1;
-  padding-left: 25px;
+  padding-left: ${({ theme }) => theme.sizes.xs2}px;
+  font-size: ${({ theme }) => theme.fontSizes.extraLarge2}px;
+  font-weight: normal;
 
-  @media (max-width: 500px) {
-    padding-left: 20px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl15}) {
+    font-size: ${({ theme }) => theme.fontSizes.extraLarge}px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
+    font-size: ${({ theme }) => theme.fontSizes.medium}px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.sizes.xl12}px) {
+    font-size: ${({ theme }) => theme.fontSizes.small}px;
   }
 `;
 
 export const NavContainer = styled.nav`
   display: flex;
-  gap: 75px;
-  padding-right: 25px;
+  gap: ${({ theme }) => theme.sizes.l}px;
+  padding-right: ${({ theme }) => theme.sizes.xs2}px;
 
-  @media (max-width: 768px) {
-    gap: 50px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl15}px) {
+    gap: ${({ theme }) => theme.sizes.s}px;
   }
 
-  @media (max-width: 600px) {
-    gap: 20px;
+  @media (max-width: ${({ theme }) => theme.sizes.xl14}px) {
+    gap: ${({ theme }) => theme.sizes.xs4}px;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: ${({ theme }) => theme.sizes.xl12}px) {
     display: none;
   }
 `;
 
-export const MenuIcon = styled.div`
-  padding-right: 20px;
+export const MenuImgContainer = styled.div`
+  padding-right: ${({ theme }) => theme.sizes.xs4}px;
   cursor: pointer;
 
   img {
-    width: 40px;
-    height: 40px;
+    width: ${({ theme }) => theme.sizes.xs}px;
+    height: ${({ theme }) => theme.sizes.xs}px;
   }
 
-  @media (min-width: 501px) {
+  @media (min-width: ${({ theme }) => theme.sizes.xl12}px) {
     display: none;
   }
 `;
 
 export const DropDownMenu = styled.div`
   position: absolute;
-  top: 90px;
+  top: ${({ theme }) => theme.sizes.xl2}px;
   right: 0;
-  background-color: #3e50a5;
+  background-color: ${({ theme }) => theme.colors.violetA};
   display: flex;
   flex-direction: column;
 
   &:last-child {
-    border-bottom-left-radius: 10px;
+    border-bottom-left-radius: ${({ theme }) => theme.sizes.xs7}px;
   }
 `;
 
@@ -93,27 +107,27 @@ export const MenuItem = styled(NavLink)`
   }
   &.active {
     transform: scale(1.07);
-    color: #cccccc;
+    color: ${({ theme }) => theme.colors.grey1};
   }
 `;
 
 export const StyledLink = styled(NavLink)`
   text-decoration: none;
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
-  font-size: 20px;
-  padding: 20px 50px;
+  font-size: ${({ theme }) => theme.fontSizes.extraSmall}px;
+  padding: ${PADDING_V}px ${PADDING_H}px;
   transition: background-color 0.5s;
 
   &:hover {
-    background-color: #3e50b5;
+    background-color: ${({ theme }) => theme.colors.violetB};
   }
 
   &:last-child:hover {
-    border-bottom-left-radius: 10px;
+    border-bottom-left-radius: ${({ theme }) => theme.sizes.xs7}px;
   }
 
   &.active {
-    color: #cccccc;
+    color: ${({ theme }) => theme.colors.grey1};
   }
 `;
