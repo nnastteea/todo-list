@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Delete from "@assets/delete.svg";
-import Edit from "@assets/edit.svg";
+import { ReactComponent as DeleteIcon } from "@assets/delete.svg";
+import { ReactComponent as EditIcon } from "@assets/edit.svg";
 import { Task } from "@interfaces/Task";
 
 import * as S from "./style";
@@ -43,17 +43,13 @@ function TaskList({ tasks, setTasks, setIsEditTask }: TaskListProps) {
               />
               <S.TaskName $completed={task.completed}>{task.name}</S.TaskName>
               <S.TaskActions>
-                <img src={Edit} alt="edit" onClick={handleEdit(task)} />
-                <img
-                  src={Delete}
-                  alt="delete"
-                  onClick={handleDelete(task.id)}
-                />
+                <EditIcon alt="edit" onClick={handleEdit(task)} />
+                <DeleteIcon alt="delete" onClick={handleDelete(task.id)} />
               </S.TaskActions>
             </S.TaskItem>
           ))
         ) : (
-          <p>There is no tasks</p>
+          <S.InfoMessage>There is no tasks</S.InfoMessage>
         )}
       </S.TaskContainer>
       {tasks.length > 0 && (

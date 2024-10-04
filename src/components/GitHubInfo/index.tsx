@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Search from "@assets/search.svg";
+import { ReactComponent as Search } from "@assets/search.svg";
 import axios from "axios";
 
 import * as S from "./style";
@@ -35,11 +35,11 @@ function GitHubInfo() {
       <S.InputSearchContainer>
         <S.InputSearch placeholder="Search name..." onChange={handleChange} />
         <S.SearchButton type="submit" aria-label="Search">
-          <img src={Search} alt="search icon" />
+          <Search alt="search icon" />
         </S.SearchButton>
       </S.InputSearchContainer>
 
-      {error && <p>{error}</p>}
+      {error && <S.ErrorMessage>{error}</S.ErrorMessage>}
 
       {userData && (
         <S.UserCard>

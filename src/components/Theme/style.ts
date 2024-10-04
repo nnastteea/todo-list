@@ -12,6 +12,7 @@ export const LabelTheme = styled.p`
 export const ThemeButton = styled.button`
   background: ${({ theme }) => theme.colors.grey4};
   padding: ${PADDING_V}px ${PADDING_H}px;
+  color: ${({ theme }) => theme.colors.black};
   border-radius: ${({ theme }) => theme.sizes.xs8}px;
   border: 2px solid ${({ theme }) => theme.colors.grey5};
   font-size: ${({ theme }) => theme.fontSizes.extraSmall3}px;

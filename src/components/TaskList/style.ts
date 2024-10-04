@@ -10,6 +10,7 @@ const PADDING_H4 = 120;
 export const HeaderTask = styled.h1`
   font-size: ${({ theme }) => theme.fontSizes.extraLarge3}px;
   padding-top: ${({ theme }) => theme.sizes.s}px;
+  color: ${({ theme }) => theme.colors.black};
 
   @media (max-width: ${({ theme }) => theme.sizes.xl15}px) {
     padding-top: ${({ theme }) => theme.sizes.xs}px;
@@ -64,16 +65,22 @@ export const TaskActions = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.sizes.xs7}px;
 
-  img {
+  svg {
     cursor: pointer;
     width: ${({ theme }) => theme.sizes.xs4}px;
     height: ${({ theme }) => theme.sizes.xs4}px;
+    color: ${({ theme }) => theme.colors.black};
+  }
+
+  svg:last-child {
+    color: ${({ theme }) => theme.colors.red};
   }
 `;
 
 export const TaskName = styled.span<{ $completed: boolean }>`
   flex-grow: 1;
   margin-left: ${({ theme }) => theme.sizes.xs7}px;
+  color: ${({ theme }) => theme.colors.black};
   text-decoration: ${({ $completed }) =>
     $completed ? "line-through" : "none"};
 `;
@@ -116,4 +123,7 @@ export const DeleteSelectedButton = styled.button`
     margin-right: ${({ theme }) => theme.sizes.xs10}px;
     padding: ${PADDING_V}px ${PADDING_H4}px;
   }
+`;
+export const InfoMessage = styled.p`
+  color: ${({ theme }) => theme.colors.black};
 `;

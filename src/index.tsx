@@ -1,6 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Main from "./ThemeProvider";
+import App from "./App";
+import ThemeProvider from "./ThemeProvider";
 
-ReactDOM.render(<Main />, document.getElementById("root"));
+ReactDOM.render(
+  <ThemeProvider>
+    <App />
+  </ThemeProvider>,
+  document.getElementById("root"),
+);
