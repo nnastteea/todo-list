@@ -6,12 +6,15 @@ interface ThemeContextType {
   changeTheme: () => void;
 }
 
+const THEME_LIGHT = "light";
+const THEME_DARK = "dark";
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const storedTheme =
-    (localStorage.getItem("theme") as "light" | "dark") || null;
-  const initialTheme = storedTheme === "light" ? themes.light : themes.dark;
+    (localStorage.getItem("theme") as "THEME_LIGHT" | "THEME_DARK") || null;
+  const initialTheme =
+    storedTheme === "THEME_LIGHT" ? themes.light : themes.dark;
 
   const [currentTheme, setCurrentTheme] = useState(initialTheme);
 
@@ -20,7 +23,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
       const newTheme = prevState === themes.light ? themes.dark : themes.light;
       localStorage.setItem(
         "theme",
-        newTheme === themes.light ? "light" : "dark",
+        newTheme === themes.light ? "THEME_LIGHT" : "THEME_DARK",
       );
       return newTheme;
     });
