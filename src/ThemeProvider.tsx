@@ -1,17 +1,47 @@
-import React from "react";
+import React, { createContext, ReactNode, useContext, useState } from "react";
 import { themes } from "@theme/theme";
-import { ThemeProvider } from "styled-components";
 
-import App from "./App";
+interface ThemeContextType {
+  currentTheme: typeof themes.light | typeof themes.dark;
+  changeTheme: () => void;
+}
 
-const Main = () => {
-  const currentTheme = themes.light;
+const THEME_LIGHT = "light";
+const THEME_DARK = "dark";
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+
+const ThemeProvider = ({ children }: { children: ReactNode }) => {
+  const storedTheme =
+    (localStorage.getItem("theme") as "THEME_LIGHT" | "THEME_DARK") || null;
+  const initialTheme =
+    storedTheme === "THEME_LIGHT" ? themes.light : themes.dark;
+
+  const [currentTheme, setCurrentTheme] = useState(initialTheme);
+
+  const changeTheme = () => {
+    setCurrentTheme((prevState: typeof themes.light | typeof themes.dark) => {
+      const newTheme = prevState === themes.light ? themes.dark : themes.light;
+      localStorage.setItem(
+        "theme",
+        newTheme === themes.light ? "THEME_LIGHT" : "THEME_DARK",
+      );
+      return newTheme;
+    });
+  };
 
   return (
-    <ThemeProvider theme={currentTheme}>
-      <App />
-    </ThemeProvider>
+    <ThemeContext.Provider value={{ currentTheme, changeTheme }}>
+      {children}
+    </ThemeContext.Provider>
   );
 };
 
-export default Main;
+export const useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error("useTheme must be with value");
+  }
+  return context;
+};
+
+export default ThemeProvider;

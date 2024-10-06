@@ -1,19 +1,23 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import routes from "@routes/route";
+import { ThemeProvider } from "styled-components";
 
 import Home from "./pages/Home";
 import Settings from "./pages/Settings";
+import { useTheme } from "./ThemeProvider";
 
 function App() {
+  const { currentTheme } = useTheme();
   return (
-    <Router>
-      <Routes>
-        <Route path={routes.HOME} element={<Home />} />
-        <Route path={routes.SETTINGS} element={<Settings />} />
-      </Routes>
-    </Router>
+    <ThemeProvider theme={currentTheme}>
+      <Router>
+        <Routes>
+          <Route path={routes.HOME} element={<Home />} />
+          <Route path={routes.SETTINGS} element={<Settings />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 

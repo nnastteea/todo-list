@@ -37,6 +37,7 @@ export const FormAdd = styled.form`
 
 export const InputTask = styled.input`
   background: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.black};
   width: ${({ theme }) => theme.sizes.xl11}px;
   border: none;
   border-bottom: 2px solid ${({ theme }) => theme.colors.violetB};
@@ -50,7 +51,7 @@ export const InputTask = styled.input`
 
 export const ButtonAddTask = styled.button`
   background: ${({ theme }) => theme.colors.violetB};
-  color: ${({ theme }) => theme.colors.white};
+  color: white;
   padding: ${PADDING_V}px ${PADDING_H1}px;
   margin-top: ${({ theme }) => theme.sizes.xs7}px;
   border-radius: ${({ theme }) => theme.sizes.xs7}px;

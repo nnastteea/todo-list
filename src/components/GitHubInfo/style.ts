@@ -15,10 +15,12 @@ export const FormGitHubSearch = styled.form`
 
 export const LabelSearch = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.extraSmall2}px;
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const InputSearch = styled.input`
   width: ${({ theme }) => theme.sizes.xl5}px;
+  color: ${({ theme }) => theme.colors.black};
   border: none;
   border-bottom: 2px solid ${({ theme }) => theme.colors.grey3};
   font-size: ${({ theme }) => theme.fontSizes.extraSmall3}px;
@@ -39,8 +41,9 @@ export const SearchButton = styled.button`
   transition: 0.5s ease;
   width: auto;
 
-  & > img {
+  & > svg {
     width: ${({ theme }) => theme.sizes.xs3}px;
+    color: ${({ theme }) => theme.colors.black};
     height: auto;
     display: block;
     padding: 0;
@@ -48,7 +51,7 @@ export const SearchButton = styled.button`
     transition: 0.5s ease;
   }
 
-  &:hover > img {
+  &:hover > svg {
     transform: scale(1.05);
     filter: brightness(0.5) invert(0.5);
   }
@@ -65,6 +68,7 @@ export const UserCard = styled.div`
   padding: ${({ theme }) => theme.sizes.xs7}px;
   display: flex;
   flex-direction: column;
+  color: ${({ theme }) => theme.colors.black};
 
   img {
     margin-right: ${({ theme }) => theme.sizes.xs7}px;
@@ -76,4 +80,8 @@ export const UserCard = styled.div`
     font-size: ${({ theme }) => theme.fontSizes.extraSmall2}px;
     margin-bottom: ${({ theme }) => theme.sizes.xs7}px;
   }
+`;
+
+export const ErrorMessage = styled.p`
+  color: ${({ theme }) => theme.colors.black};
 `;
