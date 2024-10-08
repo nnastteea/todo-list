@@ -51,7 +51,7 @@ const config: Configuration = {
         ],
       },
       {
-        test: /\.jpg$/,
+        test: /\.png$/,
         use: [
           {
             loader: "file-loader",
