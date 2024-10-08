@@ -50,6 +50,17 @@ const config: Configuration = {
           "file-loader",
         ],
       },
+      {
+        test: /\.png$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[path][name].[ext]",
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [

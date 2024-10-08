@@ -15,7 +15,12 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0; 
     font-family: "Jost", sans-serif;
   }
-    
+  
+ #root {
+    margin: 0;
+    padding: 0;
+  }
+
   &::-webkit-scrollbar {
     width: ${({ theme }) => theme.sizes.xs9}px;
   }
