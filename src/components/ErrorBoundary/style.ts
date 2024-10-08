@@ -1,21 +1,34 @@
 import styled from "styled-components";
 
 const backgroundErrorPage = "#FBFAFF";
-const heightImg = 85;
-const fontSize = 18;
+const heightImg1 = 70;
+const heightImg2 = 50;
+const heightImg3 = 30;
+const fontSize1 = 20;
+const fontSize2 = 18;
 
 export const ContainerError = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   background: ${backgroundErrorPage};
-  margin: 0;
 `;
 
 export const ErrorIcon = styled.img`
-  height: ${heightImg}vh;
+  height: ${heightImg1}vh;
+
+  @media (max-width: 768px) {
+    height: ${heightImg2}vh;
+  }
+  @media (max-width: 550px) {
+    height: ${heightImg3}vh;
+  }
 `;
 
 export const TextError = styled.p`
-  font-size: ${fontSize}px;
+  font-size: ${fontSize1}px;
+  text-align: center;
+  @media (max-width: 768px) {
+    font-size: ${fontSize2}px;
+  }
 `;

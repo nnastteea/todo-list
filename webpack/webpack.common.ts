@@ -51,12 +51,12 @@ const config: Configuration = {
         ],
       },
       {
-        test: /\.png$/, // Добавьте это правило
+        test: /\.jpg$/,
         use: [
           {
             loader: "file-loader",
             options: {
-              name: "[path][name].[ext]", // Настройте именование файлов, если необходимо
+              name: "[path][name].[ext]",
             },
           },
         ],
