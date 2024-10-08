@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { Task } from "@interfaces/Task";
 
-import ErrorBoundary from "../components/ErrorBoundary/index";
 import FormToDo from "../components/FormToDo";
 import TaskList from "../components/TaskList";
 import * as S from "../GlobalStyles";

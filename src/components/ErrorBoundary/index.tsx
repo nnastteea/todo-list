@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import ErrorImg from "@assets/error.svg";
+import ErrorImg from "@assets/error.png";
 
 import * as S from "./style";
 
