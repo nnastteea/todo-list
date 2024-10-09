@@ -47,4 +47,10 @@ export default [
       "linebreak-style": ["error", "unix"],
     },
   },
+  {
+    files: ["tests/**/*"],
+    env: {
+      jest: true,
+    },
+  },
 ];
