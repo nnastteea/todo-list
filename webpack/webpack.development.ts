@@ -1,15 +1,18 @@
-import { merge } from 'webpack-merge';
-import common from './webpack.common';
-import { Configuration } from 'webpack';
+import { Configuration } from "webpack";
+import { merge } from "webpack-merge";
+
+import common from "./webpack.common";
+
+import "webpack-dev-server";
 
 const developmentConfig: Configuration = {
-  mode: 'development',
+  mode: "development",
   output: {
-    filename: '[name].bundle.js',
+    filename: "[name].bundle.js",
   },
-  devtool: 'eval-cheap-source-map',
+  devtool: "eval-cheap-source-map",
   devServer: {
-    static: './dist',
+    static: "./dist",
     compress: true,
     historyApiFallback: true,
     open: true,
