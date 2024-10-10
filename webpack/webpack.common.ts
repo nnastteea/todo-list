@@ -16,6 +16,7 @@ const config: Configuration = {
       "@interfaces": path.resolve("./src/interfaces"),
       "@routes": path.resolve("./src/routes"),
       "@theme": path.resolve("./src/themes"),
+      "@helpers": path.resolve("./src/helpers"),
     },
   },
   module: {

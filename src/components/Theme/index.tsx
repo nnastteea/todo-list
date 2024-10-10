@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { themes } from "@theme/theme";
 
 import { useTheme } from "../../ThemeProvider";

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ReactComponent as DeleteIcon } from "@assets/delete.svg";
 import { ReactComponent as EditIcon } from "@assets/edit.svg";
 import { Task } from "@interfaces/Task";

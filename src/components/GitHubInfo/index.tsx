@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ReactComponent as Search } from "@assets/search.svg";
-import axios from "axios";
+import { fetchGitHubUser } from "@helpers/gitHubFetch";
 
 import * as S from "./style";
 import { GitHubUser } from "./types";
@@ -17,11 +17,8 @@ function GitHubInfo() {
   const handleSearch = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      const response = await axios.get(
-        `https://api.github.com/users/${inputSearch}`,
-      );
-      const { login, avatar_url } = response.data;
-      setUserData({ login, avatar_url });
+      const user = await fetchGitHubUser(inputSearch);
+      setUserData(user);
       setError("");
     } catch (err) {
       setUserData(null);

@@ -16,7 +16,8 @@
       "@interfaces/*": ["interfaces/*"],
       "@assets/*": ["assets/*"],
       "@routes/*": ["routes/*"],
-      "@theme/*": ["themes/*"]
+      "@theme/*": ["themes/*"],
+      "@helpers/*": ["helpers/*"]
     } // Обрабатывает каждый файл как отдельный модуль
   },
   "include": ["src/**/*", "src/@types/declarations.d.ts"], // Включает все файлы в директории src и ее поддиректориях

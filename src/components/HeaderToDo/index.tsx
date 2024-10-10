@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
 import MenuBurger from "@assets/menu.svg";
 import routes from "@routes/route";
 
