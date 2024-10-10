@@ -1,6 +1,5 @@
+import { changeTheme } from "@helpers/changeTheme";
 import { themes } from "@theme/theme";
-
-import { changeTheme } from "../helpers/changeTheme";
 
 describe("changeTheme function", () => {
   beforeEach(() => {

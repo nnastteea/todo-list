@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import ReactDOM from "react-dom";
 
 import HeaderToDo from "../components/HeaderToDo";
 import * as S from "../GlobalStyles";

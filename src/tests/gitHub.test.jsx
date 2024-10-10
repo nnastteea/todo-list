@@ -1,6 +1,5 @@
+import { fetchGitHubUser } from "@helpers/gitHubFetch";
 import axios from "axios";
-
-import { fetchGitHubUser } from "../helpers/gitHubFetch";
 
 jest.mock("axios");
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ReactComponent as Search } from "@assets/search.svg";
+import { fetchGitHubUser } from "@helpers/gitHubFetch";
 
-import { fetchGitHubUser } from "../../helpers/gitHubFetch";
 import * as S from "./style";
 import { GitHubUser } from "./types";
 

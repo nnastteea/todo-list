@@ -1,7 +1,6 @@
 import React, { createContext, ReactNode, useContext, useState } from "react";
+import { changeTheme as toggleTheme } from "@helpers/changeTheme";
 import { themes } from "@theme/theme";
-
-import { changeTheme as toggleTheme } from "../src/helpers/changeTheme";
 
 interface ThemeContextType {
   currentTheme: typeof themes.light | typeof themes.dark;
