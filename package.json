@@ -5,8 +5,8 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "webpack serve --open",
-    "build": "webpack",
+    "start": "webpack serve --config webpack/webpack.development.ts",
+    "build": "webpack --config webpack/webpack.production.ts",
     "lint": "eslint . --fix",
     "format": "prettier --write .",
     "test": "jest"
